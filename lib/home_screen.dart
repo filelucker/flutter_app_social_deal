@@ -106,11 +106,7 @@ class Form extends StatelessWidget {
 }
 
 class PopularHome extends StatelessWidget {
-  final List<String> entries = <String>[
-    'Aaaaaaaaaaaa ',
-    'B',
-    'C'
-  ];
+  final List<String> entries = <String>['Aaaaaaaaaaaa ', 'B', 'C'];
   final List<int> colorCodes = <int>[600, 500, 100];
 
   @override
@@ -120,11 +116,10 @@ class PopularHome extends StatelessWidget {
       itemCount: entries.length,
       itemBuilder: (BuildContext context, int index) {
         return Container(
-          height: Sizes.getSize(450),
+          height: Sizes.getSize(400),
           // color: Colors.amber[colorCodes[index]],
           child: Column(
             children: [
-
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: ClipRRect(
@@ -132,12 +127,13 @@ class PopularHome extends StatelessWidget {
                   child: Container(
                       width: MediaQuery.of(context).size.width,
                       child: Banner(
-
                         location: BannerLocation.topEnd,
                         message: '10%',
                         color: Colors.green.withOpacity(0.6),
                         textStyle: TextStyle(
-                            fontWeight: FontWeight.normal, fontSize: 12.0, letterSpacing: 1.0),
+                            fontWeight: FontWeight.normal,
+                            fontSize: 12.0,
+                            letterSpacing: 1.0),
                         textDirection: TextDirection.ltr,
                         child: new FadeInImage.assetNetwork(
                           placeholder: 'background_eraser.jpg',
@@ -155,12 +151,14 @@ class PopularHome extends StatelessWidget {
                   child: RichText(
                     overflow: TextOverflow.ellipsis,
                     text: TextSpan(
-                        style: TextStyle(color: Colors.black, fontSize: FontSizes.getSp(15),fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: FontSizes.getSp(15),
+                            fontWeight: FontWeight.bold),
                         text: 'RichText Entry ${entries[index]}'),
                   ),
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: Align(
@@ -173,21 +171,18 @@ class PopularHome extends StatelessWidget {
                         color: Colors.lightGreenAccent,
                         height: Sizes.getSize(30),
                         width: Sizes.getSize(300),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: TextField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      width: 0, color: Colors.lightGreenAccent),
-                                  borderRadius: const BorderRadius.all(
-                                    const Radius.circular(10.0),
-                                  ),
-                                ),
-                                contentPadding: EdgeInsets.symmetric(horizontal: 12),
-                                prefixIcon: Icon(Icons.done),
-                                hintText: 'Enter a search the'
-                            ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: Row(
+                            children: [
+                              Icon(Icons.send),
+                              SizedBox(
+                                width: 8,
+                              ),
+                              Expanded(
+                                  child: Text('Enviar',
+                                      textAlign: TextAlign.start))
+                            ],
                           ),
                         ),
                       ),
@@ -207,7 +202,8 @@ class PopularHome extends StatelessWidget {
                         text: 'RichText Entry ${entries[index]}'),
                   ),
                 ),
-              ),   Padding(
+              ),
+              Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: Align(
                   alignment: Alignment.centerLeft,
@@ -220,11 +216,87 @@ class PopularHome extends StatelessWidget {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      "eshiett1995",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Expanded(
+                        child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Container(
+                                width: Sizes.getSize(100),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        "4:33am",
+                                        textDirection: TextDirection.ltr,
+                                        textAlign: TextAlign.right,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.amber),
+                                      ),
+                                    ),
+                                    Icon(Icons.star, color: Colors.amber),
+                                  ],
+                                )))),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      "eshiett1995",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Expanded(
+                        child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Container(
+                                width: Sizes.getSize(100),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        "4:33am",
+                                        textDirection: TextDirection.ltr,
+                                        textAlign: TextAlign.right,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.amber),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Text(
+                                        "4:33am",
+                                        textDirection: TextDirection.ltr,
+                                        textAlign: TextAlign.right,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.amber),
+                                      ),
+                                    ),
+                                  ],
+                                )))),
+                  ],
+                ),
+              )
             ],
           ),
         );
       },
-      separatorBuilder: (BuildContext context, int index) => const Divider( height: 20, color: Colors.grey,),
+      separatorBuilder: (BuildContext context, int index) => const Divider(
+        height: 20,
+        color: Colors.grey,
+      ),
     );
   }
 }
